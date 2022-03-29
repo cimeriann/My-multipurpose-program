@@ -25,13 +25,13 @@ def myProgram():
             user1 = CreatePlayer(name)
             Computer = CreatePlayer('Computer')
         
+        # create a list of the possible choices that could be made
             choices = ['rock', 'paper','scissors']
-            # gameon = True
+        # define variables that keep track of the player and computer's scores
             playerscore = 0
             computerscore = 0
             # this keeps track of the number of rounds
-            times = 1 
-            # while gameon:    
+            times = 1    
             while times < 4:
                 # print a menu that asks the user what they want to do
                 print('''
@@ -52,14 +52,12 @@ def myProgram():
                     computerchoice = choices[random.randint(0, 2)]
                 
                     if playerinput == 'rock':
-                        # print('you chose rock')
                         
                         if computerchoice == 'paper':
                             print('computer chose paper')
                             print('Paper beats rock so computer gets one point')
                             computerscore += 1
                             times += 1
-                            # continue
                             
                         elif computerchoice == 'scissors':
                             print('computer chose scissors')
@@ -72,14 +70,13 @@ def myProgram():
                         print('This is a draw so zero points are rewarded.')
                         continue
                     elif playerinput == 'paper':
-                        # print('you chose paper')
                         
                         if computerchoice == 'rock':
                             print('computer chose rock')
                             print('Paper beats rock so player gets one point')
                             playerscore += 1
                             times += 1
-                            # continue
+                            
                         elif computerchoice == 'scissors':
                             print('computer chose scissors')
                             print('scissors beats paper so computer gets one point')
@@ -87,14 +84,13 @@ def myProgram():
                             times += 1
                         continue
                     elif playerinput == 'scissors':
-                        # print('you chose scissors')
-                        
+
                         if computerchoice == 'paper':
                             print('computer chose paper')
                             print('scissors beats paper so computer gets one point')
                             playerscore += 1
                             times += 1
-                            # continue
+                            
                         elif computerchoice == 'rock':
                             print('computer chose rock')
                             print('Rock beats scissors so computer gets one point')
