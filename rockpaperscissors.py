@@ -9,9 +9,10 @@ def myProgram():
     while True:
         menu = '''
         What would you like to do?
-        1) Play rock-paper-scissors-game
-        2) Quit program
-        enter 1 or 2
+        1) Play rock-paper-scissors game
+        2) Do some weight conversions
+        3) Quit program
+        enter 1, 2 or 3
         '''
         print(menu)
         response = str(input())
@@ -52,13 +53,12 @@ def myProgram():
                     computerchoice = choices[random.randint(0, 2)]
                 
                     if playerinput == 'rock':
-                        
                         if computerchoice == 'paper':
                             print('computer chose paper')
                             print('Paper beats rock so computer gets one point')
                             computerscore += 1
                             times += 1
-                            
+                        
                         elif computerchoice == 'scissors':
                             print('computer chose scissors')
                             print('Rock beats scissors so player gets one point')
@@ -98,12 +98,33 @@ def myProgram():
                             times += 1
                         continue
             if playerscore >= 2:
-                print('Player has won')
+                print(f'{user1.name} has won')
                 
             elif computerscore >= 2:
                 print('Computer has won')               
         elif response == '2':
+            user_weight = float(input('weight:'))
+            while True:
+                setunit = input('''what is the unit of the weight you entered?
+                                 pounds(l) or kilos(k)? ''')
+
+                if setunit.lower() == 'k': 
+                    weight = user_weight * 2.20462
+                    print(f'your weight in pounds is {weight}')
+                    break
+
+                elif setunit.lower() == 'l':
+                    weight = user_weight * 0.4535
+                    print(f'your weight in kilos is {weight}')
+                    break
+
+                else:
+                    print('wrong input!!! Please input l or k')
+            continue
+        elif response == '3':
             break
+        else:
+            print('Please enter a valid option from the menu.')
 myProgram()
 
 
