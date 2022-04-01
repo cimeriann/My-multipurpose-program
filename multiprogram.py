@@ -11,7 +11,8 @@ def myProgram():
         What would you like to do?
         1) Play rock-paper-scissors game
         2) Do some weight conversions
-        3) Quit program
+        3) Play a game where the computer tries to guess the number you choose
+        4) Quit program
         enter 1, 2 or 3
         '''
         print(menu)
@@ -122,6 +123,31 @@ def myProgram():
                     print('wrong input!!! Please input l or k')
             continue
         elif response == '3':
+            print('''In this game, the user chooses a number in their head, and they set 
+            the highest possible value the computer can look through and the computer tries to narrow 
+            down and eventually get the user\'s number. ''')
+            print('\n')
+            print('\n')
+            # set the lowest value in the range of the numbers the computer will look through to zero
+            lowestnum  = 0
+            # collect the highest possible number in the range of values
+            highestnum = int(input('''What\'s the highest possible number in a your range of
+            values you want the computer to look through? '''))
+            # feedback will store the replies of the user
+            feedback = ''
+            while feedback != 'c':
+                if lowestnum != highestnum:
+                    computerguess = random.randint(lowestnum, highestnum)
+                else:
+                    computerguess = lowestnum
+                feedback = input(f'Is {computerguess} too high(H), too low(L) or correct(C)?').lower()
+                if feedback == 'h':
+                    highestnum = computerguess - 1
+            
+                elif feedback =='l':
+                    lowestnum = computerguess + 1
+            print(f'Your number {computerguess} has been guessed by the computer.')
+        elif response == '4':
             break
         else:
             print('Please enter a valid option from the menu.')
