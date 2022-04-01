@@ -139,14 +139,14 @@ def myProgram():
                 if lowestnum != highestnum:
                     computerguess = random.randint(lowestnum, highestnum)
                 else:
-                    computerguess = lowestnum
+                    computerguess = lowestnum #could also be highestnum because lowestnum=highestnum
                 feedback = input(f'Is {computerguess} too high(H), too low(L) or correct(C)?').lower()
                 if feedback == 'h':
                     highestnum = computerguess - 1
             
                 elif feedback =='l':
                     lowestnum = computerguess + 1
-            print(f'Your number {computerguess} has been guessed by the computer.')
+            print(f'Your number, {computerguess}, has been guessed by the computer.')
         elif response == '4':
             break
         else:
