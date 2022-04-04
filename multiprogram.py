@@ -3,6 +3,36 @@ class CreatePlayer:
     def __init__(self,playername):
         self.name = playername
         self.score = f'{self.name}\'s score is: '
+import pywhatkit
+
+def send_whatsapp_message():
+    cell_phone_number = input('Enter receipient\'s number')
+    print()
+    message = input('Enter message: ')
+    print()
+    time = input('Enter time of delivery in format(e.g.13,43)')
+    
+    splitted_time = time.split(',')
+    
+    hour = int(splitted_time[0])
+    
+    minute = int(splitted_time[1])
+    
+    pywhatkit.sendwhatmsg(f'+234{cell_phone_number}', message, hour, minute)
+
+    import pywhatkit as kit
+def seach_song_on_youtube():
+    search = input('What do you want to search for on youtube?')
+            
+    kit.playonyt(search)
+
+def search_on_google():
+    search_google = input('What do you want to search for on google')
+    kit.search(search_google)
+def get_info():
+    enquiry = input('What do you need more info on?')
+    kit.info(enquiry)
+
 
 import random
 def myProgram():
@@ -12,8 +42,12 @@ def myProgram():
         1) Play rock-paper-scissors game
         2) Do some weight conversions
         3) Play a game where the computer tries to guess the number you choose
-        4) Quit program
-        enter 1, 2 or 3
+        4) Send a whatsapp message
+        5) Play a song on youtube
+        6) Do a google-search
+        7) Get some info without opening a web browser
+        8) Quit program
+        Enter the integer that comes before an option to select that option
         '''
         print(menu)
         response = str(input())
@@ -148,6 +182,20 @@ def myProgram():
                     lowestnum = computerguess + 1
             print(f'Your number, {computerguess}, has been guessed by the computer.')
         elif response == '4':
+            send_whatsapp_message()
+            continue
+        elif response == '5':
+            seach_song_on_youtube()
+            continue
+
+        elif response == '6':
+            search_on_google()
+            continue
+
+        elif response == '7':
+            get_info()
+            continue
+        elif response == '8':
             break
         else:
             print('Please enter a valid option from the menu.')
