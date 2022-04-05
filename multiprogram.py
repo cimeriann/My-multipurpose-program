@@ -20,18 +20,18 @@ def send_whatsapp_message():
     
     pywhatkit.sendwhatmsg(f'+234{cell_phone_number}', message, hour, minute)
 
-    import pywhatkit as kit
+import pywhatkit 
 def seach_song_on_youtube():
     search = input('What do you want to search for on youtube?')
             
-    kit.playonyt(search)
+    pywhatkit.playonyt(search)
 
 def search_on_google():
     search_google = input('What do you want to search for on google')
-    kit.search(search_google)
+    pywhatkit.search(search_google)
 def get_info():
     enquiry = input('What do you need more info on?')
-    kit.info(enquiry)
+    pywhatkit.info(enquiry)
 
 
 import random
